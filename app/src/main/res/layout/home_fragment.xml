@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/atp__home_background">
+
+        <FrameLayout
+            android:id="@+id/frame_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="90dp">
+
+            <ImageView
+                android:id="@+id/bg_circle"
+                android:layout_width="290dp"
+                android:layout_height="290dp"
+                android:layout_gravity="center"
+                android:src="@drawable/atp__bg_circle_anim"/>
+
+            <ImageView
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_gravity="center"
+                android:src="@drawable/atp__icon_logo_in_app" />
+
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/btn_play"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/atp__button_trial_normal"
+            android:layout_below="@+id/frame_layout"
+            android:layout_marginTop="90dp"
+            android:layout_centerHorizontal="true"/>
+
+        <ImageView
+            android:id="@+id/img_info"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/atp__home_button_about"
+            android:layout_below="@+id/btn_play"
+            android:layout_marginStart="139dp"/>
+
+        <ImageView
+            android:id="@+id/img_high_score"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/btn_play"
+            android:src="@drawable/atp__home_button_archivement"
+            android:layout_alignStart="@+id/img_info"
+            android:layout_marginStart="50dp"/>
+
+        <ImageView
+            android:id="@+id/img_sound"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/btn_play"
+            android:src="@drawable/atp__button_voice"
+            android:layout_marginStart="50dp"
+            android:layout_alignStart="@+id/img_high_score"
+           />
+
+    </RelativeLayout>
+</layout>

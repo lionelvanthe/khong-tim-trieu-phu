@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Khong Tim Trieu Phu</string>
+    <string name="rule">LUẬT CHƠI</string>
+    <string name="rule_detail">Người chơi phải trả lời 15 câu hỏi với cấp độ từ dễ đến khó, thời gian trả lời là 30 giây. Mỗi câu hỏi đều được gắn với một mức tiền thưởng quy định. Người chơi trả lời đến câu hỏi nào thì chắc chắn có được số tiền thưởng tương ứng của các câu hỏi đó.</string>
+    <string name="help">TRỢ GIÚP</string>
+    <string name="_50_50_help">Máy tính bỏ đi 2 phương án sai để người chơi chọn một trong 2 phương án còn lại.</string>
+    <string name="call_help">Người chơi liên lạc tới một trong số những người nổi tiếng và hỏi ý kiến của họ.</string>
+    <string name="ask_the_audience_help">Người chơi nhận được trợ giúp dưới dạng biểu đồ phần trăm số khán giả chọn từng phương án.</string>
+    <string name="change_question_help">Người chơi sẽ được đổi câu hỏi với cùng độ khó.</string>
+    <string name="close">ĐÓNG</string>
+    <string name="_200_000">200.000</string>
+    <string name="thank">Cảm ơn bạn đã tham gia chương trình</string>
+    <string name="input_name">Nhập tên của bạn</string>
+    <string name="save">save</string>
+    <string name="high_score">High Score</string>
+    <string name="notifi">THÔNG BÁO!</string>
+    <string name="confirm">Bạn thực sự muốn dừng cuộc chơi ?</string>
+    <string name="cancel">Hủy bỏ</string>
+    <string name="yes">Đồng ý</string>
+</resources>

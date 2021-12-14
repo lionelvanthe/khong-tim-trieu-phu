@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@drawable/atp__play_background">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="?android:actionBarSize"
+                android:background="#15002d">
+
+                <ImageView
+                    android:id="@+id/img_avatar"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_no_image"
+                    android:layout_marginStart="15dp"/>
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true">
+
+                    <ProgressBar
+                        android:id="@+id/progress_circular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:progress="30" />
+                    <TextView
+                        android:id="@+id/tv_count_down"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textColor="@color/white"
+                        android:layout_gravity="center" />
+
+                </FrameLayout>
+
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/atp__icon_money"
+                    android:layout_toStartOf="@+id/tv_money"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="3dp"/>
+
+                <TextView
+                    android:id="@+id/tv_money"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:text="@string/_200_000"
+                    android:layout_marginEnd="5dp"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:weightSum="5">
+
+                <ImageView
+                    android:id="@+id/stop_help"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/atp__image_help_stop" />
+
+                <ImageView
+                    android:id="@+id/change_question_help"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/atp__image_help_change_question" />
+
+                <ImageView
+                    android:id="@+id/img_50_50_help_play"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/atp__image_help_5050" />
+
+                <ImageView
+                    android:id="@+id/ask_the_audience_help"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/atp__image_help_audience" />
+
+                <ImageView
+                    android:id="@+id/call_help"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/atp__image_help_call" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp">
+
+                <TextView
+                    android:id="@+id/tv_question"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/atp__play_question_background"
+                    android:textSize="22sp"
+                    android:gravity="center"
+                    android:padding="40dp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/holo_blue_light"/>
+                <TextView
+                    android:id="@+id/tv_order_question"
+                    android:layout_width="250dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/atp__play_order_question"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="6dp"
+                    android:textColor="#9f00a2"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textSize="20sp"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_answer_a"
+                android:layout_width="300dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center"
+                android:textSize="17sp"
+                android:textColor="@color/white"
+                android:gravity="start|center"
+                android:paddingStart="45dp"
+                android:layout_marginTop="10dp"
+                android:paddingEnd="5dp"
+                android:background="@drawable/atp__play_answer_background_normal"/>
+
+
+            <TextView
+                android:id="@+id/tv_answer_b"
+                android:layout_width="300dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center"
+                android:textSize="17sp"
+                android:textColor="@color/white"
+                android:gravity="start|center"
+                android:paddingStart="45dp"
+                android:paddingEnd="5dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/atp__play_answer_background_normal"/>
+
+            <TextView
+                android:id="@+id/tv_answer_c"
+                android:layout_width="300dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center"
+                android:textSize="17sp"
+                android:textColor="@color/white"
+                android:gravity="start|center"
+                android:paddingStart="45dp"
+                android:paddingEnd="5dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/atp__play_answer_background_normal"/>
+
+            <TextView
+                android:id="@+id/tv_answer_d"
+                android:layout_width="300dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center"
+                android:textSize="17sp"
+                android:textColor="@color/white"
+                android:gravity="start|center"
+                android:paddingStart="45dp"
+                android:paddingEnd="5dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/atp__play_answer_background_normal"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            android:layout_gravity="start"
+            android:layout_marginStart="-65dp"
+            android:background="@drawable/atp__money_background">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_money"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+        </LinearLayout>
+    </androidx.drawerlayout.widget.DrawerLayout>
+</layout>
