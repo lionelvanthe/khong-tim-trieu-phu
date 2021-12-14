@@ -38,6 +38,7 @@ public class Preference {
     public List<User> getPref(){
         Gson gson = new Gson();
 
+
         String json = sharedPreferences.getString("list_user", null);
 
         Type type = new TypeToken<ArrayList<User>>() {}.getType();
