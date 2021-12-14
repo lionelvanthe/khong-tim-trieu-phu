@@ -14,7 +14,7 @@ public class Preference {
 
     private static final String PREFERENCE_NAME = "user";
     private final SharedPreferences sharedPreferences;
-    private List<User> users;
+    private List<User> users = new ArrayList<>();
 
 
     public Preference(Context context) {
@@ -37,7 +37,6 @@ public class Preference {
 
     public List<User> getPref(){
         Gson gson = new Gson();
-
 
         String json = sharedPreferences.getString("list_user", null);
 
