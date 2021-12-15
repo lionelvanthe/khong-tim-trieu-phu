@@ -15,7 +15,6 @@ import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.khongtimtrieuphu.OnActionCallBack;
-import com.example.khongtimtrieuphu.views.dialog.QuitGameDialog;
 
 public abstract class BaseFragment<K extends ViewDataBinding, V extends ViewModel> extends Fragment implements View.OnClickListener {
 
@@ -60,10 +59,6 @@ public abstract class BaseFragment<K extends ViewDataBinding, V extends ViewMode
         mediaPlayer.start();
     }
 
-    public void quitGame(){
-        QuitGameDialog quitGameDialog = new QuitGameDialog();
-        quitGameDialog.show(getActivity().getSupportFragmentManager(), "quit_game");
-    }
 
     protected abstract K initBinding(View mRootView);
 

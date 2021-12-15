@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import com.example.khongtimtrieuphu.OnActionCallBack;
 import com.example.khongtimtrieuphu.R;
-import com.example.khongtimtrieuphu.views.fragment.BaseFragment;
 import com.example.khongtimtrieuphu.views.fragment.GameOverFragment;
 import com.example.khongtimtrieuphu.views.fragment.HighScoreFragment;
 import com.example.khongtimtrieuphu.views.fragment.PlayFragment;
@@ -81,8 +80,11 @@ public class MainActivity extends AppCompatActivity implements OnActionCallBack 
     public void onBackPressed() {
 
         Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.container_view);
-        if(fragment instanceof HomeFragment || fragment instanceof PlayFragment){
-            ((BaseFragment<?, ?>) fragment).quitGame();
+        if(fragment instanceof HomeFragment ){
+            ((HomeFragment) fragment).quitGame();
+        }
+        else if(fragment instanceof PlayFragment){
+            ((PlayFragment) fragment).stopGame();
         }
         else{
             super.onBackPressed();

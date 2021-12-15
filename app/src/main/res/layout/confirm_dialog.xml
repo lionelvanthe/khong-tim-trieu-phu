@@ -10,26 +10,26 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/notifi"
+            android:text="@string/notification"
             android:textColor="@color/white"
             android:layout_marginTop="15dp"
             android:layout_marginStart="30dp"
             android:textSize="22sp"/>
 
         <TextView
+            android:id="@+id/tv_ask_user"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textSize="18sp"
+            android:text="@string/stop_game"
             android:layout_marginTop="40dp"
-            android:textColor="@color/white"
-            android:text="@string/confirm"/>
+            android:textColor="@color/white"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-
             android:layout_marginTop="40dp">
 
             <Button
@@ -48,7 +48,7 @@
                 android:layout_height="40dp"
                 android:background="@drawable/atp__btn_template"
                 android:textColor="@color/white"
-                android:text="@string/yes"/>
+                android:text="@string/accept"/>
 
         </LinearLayout>
 

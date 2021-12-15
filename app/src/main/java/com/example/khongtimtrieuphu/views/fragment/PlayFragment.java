@@ -19,7 +19,9 @@ import com.example.khongtimtrieuphu.model.AmountOfMoney;
 import com.example.khongtimtrieuphu.model.Question;
 import com.example.khongtimtrieuphu.viewmodel.SharedViewModel;
 import com.example.khongtimtrieuphu.views.dialog.AskAudienceHelpDialog;
+import com.example.khongtimtrieuphu.views.dialog.BaseDialog;
 import com.example.khongtimtrieuphu.views.dialog.CallHelpDialog;
+import com.example.khongtimtrieuphu.views.dialog.ConfirmDialog;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +35,7 @@ public class PlayFragment extends BaseFragment<PlayFragmentBinding, SharedViewMo
     private int currentQuestion = 1;
     private final List<View> views = new ArrayList<>();
     private Hourglass hourglass = null;
+    private BaseDialog<?> dialog;
 
     @Override
     protected PlayFragmentBinding initBinding(View mRootView) {
@@ -173,11 +176,21 @@ public class PlayFragment extends BaseFragment<PlayFragmentBinding, SharedViewMo
         });
     }
 
+    public void stopGame(){
+        dialog = new ConfirmDialog();
+        dialog.show(getActivity().getSupportFragmentManager(), "stop_game");
+        dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialogInterface) {
+                gotoGameOver();
+            }
+        });
+    }
+
     @Override
     public void onClick(View view) {
         if(view == binding.stopHelp){
-            stopHelp();
-            binding.stopHelp.setOnClickListener(null);
+            stopGame();
         }
         else if(view == binding.changeQuestionHelp){
             binding.changeQuestionHelp.setImageDrawable(mContext.getDrawable(R.drawable.atp__image_help_change_question_x));
@@ -203,7 +216,8 @@ public class PlayFragment extends BaseFragment<PlayFragmentBinding, SharedViewMo
             binding.askTheAudienceHelp.setOnClickListener(null);
             binding.askTheAudienceHelp.setImageDrawable(mContext.getDrawable(R.drawable.atp__image_help_audience_x));
             hourglass.pauseTimer();
-            askTheAudienceHelp();
+            dialog = new AskAudienceHelpDialog();
+            setUpDialog("ask_the_audience_dialog");
 
 
         }
@@ -211,13 +225,10 @@ public class PlayFragment extends BaseFragment<PlayFragmentBinding, SharedViewMo
             binding.callHelp.setOnClickListener(null);
             binding.callHelp.setImageDrawable(mContext.getDrawable(R.drawable.atp__image_help_call_x));
             hourglass.pauseTimer();
-            callHelp();
+            dialog = new CallHelpDialog();
+            setUpDialog("call_help_dialog");
 
         }
-    }
-
-    private void stopHelp(){
-        gotoGameOver();
     }
 
     private void changeQuestionHelp(){
@@ -254,23 +265,10 @@ public class PlayFragment extends BaseFragment<PlayFragmentBinding, SharedViewMo
         animation.start();
     }
 
-    private void askTheAudienceHelp(){
-        AskAudienceHelpDialog askAudienceHelpDialog = new AskAudienceHelpDialog();
-        askAudienceHelpDialog.show(getActivity().getSupportFragmentManager(), "ask_the_audience_dialog");
+    private void setUpDialog(String tag){
+        dialog.show(getActivity().getSupportFragmentManager(), tag);
 
-        askAudienceHelpDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
-            @Override
-            public void onDismiss(DialogInterface dialogInterface) {
-                hourglass.resumeTimer();
-            }
-        });
-    }
-
-    private void callHelp(){
-        CallHelpDialog callHelpDialog = new CallHelpDialog();
-        callHelpDialog.show(getActivity().getSupportFragmentManager(), "call_help_dialog");
-
-        callHelpDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+        dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
             @Override
             public void onDismiss(DialogInterface dialogInterface) {
                 hourglass.resumeTimer();

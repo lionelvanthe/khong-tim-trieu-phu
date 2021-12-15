@@ -1,11 +1,14 @@
 package com.example.khongtimtrieuphu.views.fragment;
 
+import android.content.DialogInterface;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+
 import com.example.khongtimtrieuphu.R;
 import com.example.khongtimtrieuphu.databinding.HomeFragmentBinding;
 import com.example.khongtimtrieuphu.viewmodel.SharedViewModel;
+import com.example.khongtimtrieuphu.views.dialog.ConfirmDialog;
 import com.example.khongtimtrieuphu.views.dialog.TutorialDialog;
 
 public class HomeFragment extends BaseFragment<HomeFragmentBinding, SharedViewModel> {
@@ -77,6 +80,18 @@ public class HomeFragment extends BaseFragment<HomeFragmentBinding, SharedViewMo
             mediaPlayer.setVolume(log1,log1);
             flag = 0;
         }
+    }
+
+    public void quitGame(){
+        ConfirmDialog confirmDialog = new ConfirmDialog();
+        confirmDialog.show(getActivity().getSupportFragmentManager(), "quit_game");
+        confirmDialog.setText(getString(R.string.quit_game));
+        confirmDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialogInterface) {
+                getActivity().finish();
+            }
+        });
     }
 
     private void gotoHighScore(){

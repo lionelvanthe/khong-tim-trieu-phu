@@ -13,8 +13,9 @@
     <string name="input_name">Nhập tên của bạn</string>
     <string name="save">save</string>
     <string name="high_score">High Score</string>
-    <string name="notifi">THÔNG BÁO!</string>
-    <string name="confirm">Bạn thực sự muốn dừng cuộc chơi ?</string>
+    <string name="notification">THÔNG BÁO!</string>
+    <string name="stop_game">Bạn thực sự muốn dừng cuộc chơi ?</string>
+    <string name="quit_game">Bạn thực sự muốn thoát khỏi trò chơi ?</string>
     <string name="cancel">Hủy bỏ</string>
-    <string name="yes">Đồng ý</string>
+    <string name="accept">Đồng ý</string>
 </resources>
