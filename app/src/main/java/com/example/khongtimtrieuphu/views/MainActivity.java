@@ -86,6 +86,7 @@ public class MainActivity extends AppCompatActivity implements OnActionCallBack 
         else if(fragment instanceof PlayFragment){
             ((PlayFragment) fragment).stopGame();
         }
+
         else{
             super.onBackPressed();
         }
