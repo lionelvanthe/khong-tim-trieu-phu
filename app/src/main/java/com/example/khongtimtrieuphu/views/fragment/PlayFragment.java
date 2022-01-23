@@ -277,7 +277,7 @@ public class PlayFragment extends BaseFragment<PlayFragmentBinding, SharedViewMo
     }
 
     private void initCountDown(){
-        hourglass = new Hourglass(30000, 1000) {
+        hourglass = new Hourglass(100000, 1000) {
             @Override
             public void onTimerTick(long timeRemaining) {
                 binding.tvCountDown.setText(String.valueOf(timeRemaining/1000));
